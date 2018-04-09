@@ -5,6 +5,7 @@ var connection;
 
 if(process.env.JAWSDB_URL){
   connection = mysql.createConnection(process.env.JAWSDB_URL);
+<<<<<<< HEAD
 } else {
     connection = mysql.createConnection({
       port: 3306,
@@ -14,6 +15,18 @@ if(process.env.JAWSDB_URL){
       database: "burgers_db"
   });
 }
+=======
+}else{
+  connection = mysql.createConnection({
+   port: 3306,
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "burgers_db",
+
+});
+};
+>>>>>>> 9e712ca529ba678b6824d0a8cba59b0423d2becf
 
 // Make connection.
 connection.connect(function(err) {
@@ -25,4 +38,5 @@ connection.connect(function(err) {
 });
 
 // Export connection for our ORM to use.
+//connection.connect();
 module.exports = connection;
